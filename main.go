@@ -16,7 +16,7 @@ type Person struct {
 
 func main() {
 	http.HandleFunc("/", handler)
-	log.Println("GO server Oregon started on port 8080")
+	log.Println("GO server Frankfurt started on port 8080")
 	http.ListenAndServe(":8080", nil)
 }
 
@@ -28,6 +28,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	log.Println("Getting random people...")
 	w.Header().Set("Content-Type", "application/json")
 	w.Write(jsonData)
 }
